@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+    <base target="_self">
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+			integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		/>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Roboto:wght@100;300;400;500;700;900&display=swap"
+			rel="stylesheet"
+		/>
+
+    <?!= include("style-css.html"); ?>
+
+    <!-- <style>
+      :root{
+    --main-background : rgb(0, 0, 0);
+    --main-background-light: rgb(24, 20, 20);
+    --second-background-green: rgb(74, 184, 60);
+    --light-grey-background: rgb(185, 185, 185);
+    --turkis: rgb(14, 217, 231);
+    
+    --card-background: rgb(29, 15, 51);
+    --card-shadow: rgb(49, 82, 59);
+    --card-table-num-background: rgb(6, 9, 37);
+
+    --main-color: orange;
+
+    --big-fs: 2.5rem
+    --middle-fs: 1rem;
+    --small-fs: 0.8rem;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Roboto', sans-serif;
+    width: calc (100vw - 300px);
+   
+}
+/* css - generel navbar */
+.navbar{
+    width: 100vw;
+    height: 50px;
+    
+    background-image: linear-gradient(180deg,  var(--main-background), rgb(7, 7, 7), var(--main-background-light));
+    
+    color: var(--main-color);
+    position: fixed;
+}
+
+.navbar-container{
+    display: flex;
+    
+    position: sticky;
+    padding: 0 50px;
+    align-items: center;
+    height: 100%;
+   
+}
+
+/* css - LOGO - (navbar) */
+
+.logo-container{
+    flex: 2; 
+    margin-left: 10px;
+}
+
+.logo{
+   
+    font-weight: bold;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.7rem;
+}
+
+/* css - MENU - (navbar) */
+
+.menu-container{
+    flex: 4;
+}
+
+.menu-list{
+    display: flex;
+    flex-shrink: initial;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 0px 0.4em;
+
+    text-decoration: none;
+    list-style: none;
+
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
+.menu-list-item{
+    margin-right: 50px;
+    transition: all .9s ease-out;
+    border-bottom:solid transparent 5px;
+}
+
+.slider {
+    position: absolute;
+    display:block;
+    left: 5px;
+    top:95%;
+    margin:0 auto;
+    height: 2px;
+    background-color: var(--main-color);
+    width: 0%;
+    transition: width 0.7s ease;
+}
+
+.menu-list-item:hover .slider,
+.sidebar-list-item:hover .slider {
+    width: 80%;
+}
+
+.menu-active{
+   color: var(--second-background-green);
+   transform: scale(1.1);
+   font-weight: bolder;
+   border-bottom: 2px solid var(--second-background-green);
+   /* text-transform: uppercase; */
+    
+}
+
+.profile-container{
+    flex: 1;
+    min-width: 20px;
+    text-align: right;
+}
+/* css - END - navbar */
+
+
+/* css - START - sidebar */
+.sidebar{
+    position: fixed;
+    top: 0px;
+    
+    width: 50px;
+    height: 100%;
+    
+    background-color: var(--main-background);
+    color: var(--main-color);
+}
+
+.sidebar-container{
+    
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items:flex-end; 
+    align-content: center; 
+    justify-items: center;
+}
+
+.sidebar-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 100%;
+    width: 50px;
+    list-style: none;
+}
+
+.sidebar-list-item{
+    font-size: larger;
+    width: 100%;
+    padding: 15px 0px;
+    text-align: center;
+    cursor: pointer;
+    transition: 400ms all ease-in-out;
+}
+
+.sidebar-list-item:hover:not(.sidebar-active,.menu-active),
+.menu-list-item:hover:not(.sidebar-active,.menu-active){
+    transform: scale(1.2);
+    color: var(--second-background-green);
+}
+
+.sidebar-list-item:last-child{
+    color: red;
+}
+
+.sidebar-active{
+    color: var(--second-background-green);
+    transform: scale(0.9);
+    font-weight: bolder;
+    border-bottom: 2px solid var(--second-background-green);
+ }
+
+
+ .content { 
+    display: flex;    /* position: absolute; */
+    flex-direction: column;
+    padding-left: 60px;
+    padding-right: 10px;
+    width: 95%vw;
+    min-height: 100vh;
+    padding-top: 50px;
+
+    background-color: var(--main-background-light);
+    color: var(--main-color);
+    /* overflow-x: hidden; */
+
+ }
+/* 
+ .rotation-wrapper{
+     height: 100%;
+ } */
+
+.header-container{
+    flex: 2;
+    width: 100%;
+    min-height: 175px;
+    padding-top: 15px;
+    background-color: var(--main-background-light);
+    position: fixed;
+    /* position: relative; */
+}
+.content-header{
+     /* position: absolute; */
+     text-align: center;
+     color: var(--second-background-green);
+ }
+
+ .content-container{
+     padding-top: 220px;
+     display: flex;
+     flex-direction: row;
+     flex-wrap: wrap;
+     width: 75%;
+   
+
+ }
+
+ .card{
+     width: 150px;
+    height: 200px;
+    background-color: var(--card-background);
+    box-shadow: 3px -3px 10px var(--card-shadow);
+    margin: 20px;
+    border: none;
+    border-radius: 10px;
+ }
+ .table-number{
+     flex: 1;
+     display: flex;
+     flex-direction: row;
+     justify-content: space-around;
+     align-items: center;
+
+     width: 100%;
+     /* height: 35px; */
+
+     font-size: 1.8rem;
+     
+     background-color: var(--card-table-num-background);
+     border-radius: 10px 10px 0px 0px ;
+     outline: none;
+     color: var(--second-background-green);
+ }
+ .dealer-info{
+     flex: 3;
+     margin: 15px 0px;
+     text-align: center;
+     height:50px;
+    justify-content: center;
+     /* display: flex;
+     flex-direction: column;
+     align-items: space-around; */
+     /* justify-items: center; */
+     /* justify-content: center; */
+     /* justify-content: center; */
+     width: 100%;
+
+ }
+
+ .history {
+     font-size: 0.7rem;
+     font-weight: 300;
+     color:yellowgreen;
+ }
+    </style> -->
+	
+  
+    <link rel="stylesheet" href="style.scss" />
+		<title>Landing page</title>
+	</head>
+	<body>
+		<div class="navbar">
+			<div class="navbar-container">
+				<div class="logo-container">
+					<h1 class="logo">DEALERS CHOICE</h1>
+				</div>
+				<div class="menu-container">
+					<ul class="menu-list">
+						<li class="menu-list-item menu-active">
+							Home<span class="slider"></span>
+						</li>
+						<li class="menu-list-item">
+							Dashboard<span class="slider"></span>
+						</li>
+						<li class="menu-list-item">Settings<span class="slider"></span></li>
+					</ul>
+				</div>
+				<div class="profile-container">Profile</div>
+			</div>
+		</div>
+		<div class="sidebar">
+			<div class="sidebar-container">
+				<ul class="sidebar-list">
+					<li class="sidebar-list-item" id="dashboard">
+						<i class="fas fa-chart-pie"></i><span class="slider"></span>
+					</li>
+					<li class="sidebar-list-item" id="signIn">
+						<i class="fas fa-user-check"></i><span class="slider"></span>
+					</li>
+					<li class="sidebar-list-item">
+						<i class="fas fa-sync-alt"></i><span class="slider"></span>
+					</li>
+					<li class="sidebar-list-item">
+						<i class="fas fa-running"></i><span class="slider"></span>
+					</li>
+					<li class="sidebar-list-item">
+						<i class="fas fa-user-clock"></i><span class="slider"></span>
+					</li>
+					<li class="sidebar-list-item">
+						<i class="fas fa-file-signature"></i><span class="slider"></span>
+					</li>
+					<li class="sidebar-list-item">
+						<i class="fas fa-cogs"></i><span class="slider"></span>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="content">
+
+            <div id="app"></div>
+			<div class="rotation-wrapper">
+				<div class="header-container">
+					<h2 class="content-header">Rotation</h2>
+					<div class="container">
+						<details class="default square">
+							<summary>
+								Click to <span class="open">open</span
+								><span class="close">close</span>
+							</summary>
+							<p>
+								If your browser supports this element, it should allow you to
+								expand and collapse these details.
+							</p>
+						</details>
+						<details class="primary square">
+							<summary>
+								Click to <span class="open">open</span
+								><span class="close">close</span>
+							</summary>
+							<p>
+								If your browser supports this element, it should allow you to
+								expand and collapse these details.
+							</p>
+						</details>
+						<details class="success">
+							<summary>
+								Click to <span class="open">open</span
+								><span class="close">close</span>
+							</summary>
+							<p>
+								If your browser supports this element, it should allow you to
+								expand and collapse these details.
+							</p>
+						</details>
+					</div>
+					<details>
+						<summary>Some details</summary>
+						<p>Rotation 1:</p>
+						<p>Alessandro: 5 - 3 - 2 - 99</p>
+					</details>
+				</div>
+				<div class="content-container">
+					<div class="card">
+						<div class="table-number">
+							<h4>1</h4>
+						</div>
+						<div class="dealer-info">
+							<p>Maria Roberta</p>
+							<span class="made-tables">4</span>
+							<span class="history">4-3-2</span>
+						</div>
+					</div>
+					<div class="card">
+						<div class="table-number">
+							<h4>2</h4>
+						</div>
+						<div class="dealer-info">
+							Thomas Reinermann <span class="history"><br />4-3-2</span>
+						</div>
+					</div>
+
+				
+	
+
+				</div>
+			</div>
+		</div>
+    <?!= include("app-js"); ?>
+		<!-- <script src="app.js" defer></script> -->
+        <script src="Code.js"></script>
+
+		<script></script>
+	</body>
+</html>
+

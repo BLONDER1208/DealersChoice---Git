@@ -1,0 +1,54 @@
+<script>
+	// TOGGLE/SWITCH TABS to "active" classes
+
+	function changeTabForMenu(e) {
+		menuList.forEach((item) => {
+			item.classList.remove("menu-active");
+		});
+		sidebarList.forEach((item) => {
+			item.closest("li").classList.remove("sidebar-active");
+		});
+		e.target.classList.add("menu-active");
+	}
+	function changeTabForSidebar(e) {
+		sidebarList.forEach((item) => {
+			item.closest("li").classList.remove("sidebar-active");
+		});
+		menuList.forEach((item) => {
+			item.classList.remove("menu-active");
+		});
+		e.target.closest("li").classList.add("sidebar-active");
+		// = "sidebar-list-item ";
+	}
+
+	// ************   generel Eventlister:   ************
+
+	//          MENU TAB (TOP)
+	// switch the tabs to active class
+
+	const menuList = document.querySelectorAll(".menu-list-item");
+	menuList.forEach((item) => {
+		item.addEventListener("click", changeTabForMenu);
+	});
+
+	//          SIDEBAR TAB
+	// switch the tabs to active class
+
+	const sidebarList = document.querySelectorAll(".sidebar-list-item");
+	sidebarList.forEach((item) => {
+		item.addEventListener("click", changeTabForSidebar);
+	});
+
+	// ************   END of Eventlister:   ************
+	function loadDashboardView() {
+		google.script.run
+			.withSuccessHandler(function (html) {
+				document.getElementById("app").innerHTML = html;
+			})
+			.loadDashboardView();
+	}
+
+	document
+		.getElementById("dasboard")
+		.addEventListener("click", loadDashboardView);
+</script>

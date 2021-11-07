@@ -1,0 +1,25 @@
+{
+	"name": "dealers_choice_git",
+	"version": "1.0.0",
+	"description": "",
+	"main": "client/index.html",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/BLONDER1208/DealersChoice---Git.git"
+	},
+	"author": "Thomas Reinermann",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/BLONDER1208/DealersChoice---Git/issues"
+	},
+	"homepage": "https://github.com/BLONDER1208/DealersChoice---Git#readme",
+	"dependencies": {
+		"parcel-plugin-inliner": "^1.0.16"
+	},
+	"devDependencies": {
+		"@parcel/transformer-sass": "^2.0.0"
+	}
+}
